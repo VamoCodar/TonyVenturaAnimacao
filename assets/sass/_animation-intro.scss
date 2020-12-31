@@ -3,8 +3,15 @@ img {
     max-width: 100%;
 }
 
+
 body {
     overflow-x: hidden;
+    opacity: 0;
+    transition:opacity 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+body.carregou  {
+    opacity: 1;
 }
 
 @mixin sombra {
@@ -55,18 +62,20 @@ sans-serif;
 
 .secao__celular {
     flex: 1 1 50%;
-    z-index:9998;
+    z-index: 9998;
+    will-change: transform;
 }
 
 .secao__texto {
     flex: 1 1 50%;
     align-self: center;
     margin-left: -150px;
-    opacity:0;
+    opacity: 0;
     transition-delay: .5s;
 }
+
 .carregou .secao__texto {
-    opacity:1;
+    opacity: 1;
 }
 
 
@@ -74,7 +83,7 @@ sans-serif;
     position: relative;
     // transform-origin: 20% 50%;
     // transition: transform .05s;
-    will-change: transform;
+
     display: flex;
     max-width: 100%;
     padding-top: 100px;
@@ -268,12 +277,14 @@ sans-serif;
             font-size: 18px;
         }
     }
+
     .secao__texto {
-        h2{
-            font-size:32px !important;
+        h2 {
+            font-size: 32px !important;
         }
-        p{
-            font-size:18px;
+
+        p {
+            font-size: 18px;
         }
     }
 }

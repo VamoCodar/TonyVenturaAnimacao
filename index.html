@@ -47,18 +47,6 @@
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="assets/css/application.css">
-	<script>
-		function inicio() {
-			let tela = window.innerWidth;
-			let video = document.querySelector("#video")
-			let src = video.attributes[5].src
-			if (tela <= 540) {
-				video.setAttribute("src", "./assets/img/bg-mobile.mp4");
-			}
-			console.log(src);
-		}
-		inicio()
-	</script>
 
 </head>
 
@@ -657,6 +645,16 @@
 
 
 	<script>
+		//video mobile 
+		function inicio() {
+			let tela = window.innerWidth;
+			let video = document.querySelector("#video")
+			if (tela <= 540) {
+				video.setAttribute("src", "./assets/img/bg-mobile.mp4");
+			}
+		}
+
+		inicio()
 		//add clase quando dom carregar
 		document.addEventListener("DOMContentLoaded", function (event) {
 			body.classList.add("carregou")

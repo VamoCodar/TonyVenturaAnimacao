@@ -13,6 +13,8 @@
  let xInicial;
 
  let tela = window.innerWidth;
+
+ 
  //verificação scale
  function scale() {
      if (tela <= 400) {
@@ -20,27 +22,29 @@
          xInicial = 0
      } else if (tela <= 540) {
          scaleVariable = 3
-
+         xInicial = 0
+        
+         
      } else if (tela <= 720) {
          scaleVariable = 4
+         xInicial = -100
 
      } else if (tela <= 1100) {
          scaleVariable = 6
-         xVariable = -100
+         xInicial = 200
      } else if (tela <= 1366) {
          xInicial = 250
          scaleVariable = 9
-     }  else if (tela <= 1600) {
+     } else if (tela <= 1600) {
          scaleVariable = 12
          xInicial = 300
      } else if (tela <= 2000) {
          scaleVariable = 13
          xInicial = 150
+     } else if (tela >= 2000) {
+         scaleVariable = 13
+         xInicial = 200
      }
-     else if (tela >= 2000) {
-        scaleVariable = 13
-        xInicial = 200
-    }
 
  }
  scale()
@@ -92,6 +96,7 @@
      scale: 0.7,
  });
 
+ //video mobile
 
 
 

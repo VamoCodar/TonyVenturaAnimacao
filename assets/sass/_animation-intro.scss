@@ -6,10 +6,10 @@ img {
 body {
     overflow-x: hidden;
     opacity: 0;
-    
+
 }
 
-body.carregou  {
+body.carregou {
     opacity: 1;
 }
 
@@ -157,6 +157,7 @@ sans-serif;
     margin: 0 auto;
     flex-direction: column;
     margin-top: 200px;
+    pointer-events: none; //evitar selação do texto fixado
 
     #menor {
         font-size: 22px;
@@ -186,7 +187,7 @@ sans-serif;
     z-index: 99999;
     width: 189.1px;
     height: 404px;
-    border-radius: 28px;
+    border-radius: 24px;
     background-color: rgba(0, 0, 0, 0.28);
     inset: 0;
     margin: auto;

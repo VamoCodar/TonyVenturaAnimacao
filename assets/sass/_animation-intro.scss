@@ -206,11 +206,7 @@ sans-serif;
 
 
 .dark-layer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%,-50%);
+    position: absolute;  
     z-index: 99999;
     width: 189.1px;
     height: 404px;
@@ -220,7 +216,6 @@ sans-serif;
     margin: auto;
     transform: translateX(1.1px);
     -webkit-transform: translateX(1.1px);
-
     visibility: hidden;
 
 }

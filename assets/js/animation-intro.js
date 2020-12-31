@@ -71,7 +71,6 @@
 
  //estado inicial titulo
  let inicial = TweenMax.set("#text-principal", {
-     
      y: 0,
 
  });
@@ -90,10 +89,11 @@
 
 
  //text estado final
- const resizeText = TweenMax.to("#text-principal", {
+ const resizeText = TweenMax.to("#text-principal",.3, {
      y: -300,
      opacity: 0,
      scale: 0.7,
+     ease: "expo.out",
  });
 
  //video mobile
@@ -133,7 +133,7 @@
  //CENA titulo
  var sceneTitle = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 300,
+         duration: 0,
          offset: 100,
          triggerHook: 0,
      })

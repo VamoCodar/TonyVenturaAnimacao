@@ -55,12 +55,18 @@ sans-serif;
 
 .secao__celular {
     flex: 1 1 50%;
+    z-index:9998;
 }
 
 .secao__texto {
     flex: 1 1 50%;
     align-self: center;
     margin-left: -150px;
+    opacity:0;
+    transition-delay: .5s;
+}
+.carregou .secao__texto {
+    opacity:1;
 }
 
 

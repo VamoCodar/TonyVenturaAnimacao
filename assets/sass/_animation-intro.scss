@@ -63,6 +63,7 @@ sans-serif;
     flex: 1 1 50%;
     z-index: 9998;
     will-change: transform;
+    transition: initial !important;
 }
 
 .secao__texto {
@@ -87,7 +88,8 @@ sans-serif;
     max-width: 100%;
     padding-top: 100px;
     transform-origin: center;
-    transition: initial;
+    transition: initial !important;
+
 }
 
 /* .active .wrapper {

@@ -71,7 +71,7 @@
 
  //estado inicial titulo
  let inicial = TweenMax.set("#text-principal", {
-     opacity: 1,
+     
      y: 0,
 
  });
@@ -137,6 +137,7 @@
          offset: 100,
          triggerHook: 0,
      })
+     .setClassToggle("#high3", "active") // add class toggle
      .setTween(resizeText)
      .addIndicators({
          name: "RESIZE text"

@@ -134,8 +134,12 @@ sans-serif;
     -o-object-position: center center;
     object-position: center center;
     visibility: hidden;
-    
+    pointer-events: none;
 }
+video::-webkit-media-controls {
+    display: none;
+  }
+  
 
 .carregou {
 

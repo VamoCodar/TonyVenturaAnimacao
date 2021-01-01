@@ -172,7 +172,7 @@
 			<div class="secao__celular">
 				<div class="container-celular">
 					<div class="celular"></div>
-					<video id="video" loop="true" muted autoplay="autoplay" playsinline controls="false"
+					<video id="video" loop="true" muted autoplay playsinline controls="false"
 						src="./assets/img/bg-2.mp4"></video>
 					<div class="dark-layer"></div>
 					<div class="reflection"></div>
@@ -658,8 +658,15 @@
 		//add clase quando dom carregar
 		document.addEventListener("DOMContentLoaded", function (event) {
 			body.classList.add("carregou")
-			document.getElementById('video'); video.control = false
+
 		});
+
+		video = getElementsById('video');
+
+		function removeControls(video) {
+			video.removeAttribute('controls');
+		}
+		window.onload = removeControls(video);
 
 
 

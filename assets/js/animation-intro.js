@@ -29,9 +29,15 @@
          scaleVariable = 4
          xInicial = -100
 
-     } else if (tela <= 1100) {
+     } 
+   
+     else if (tela <= 992) {
+        scaleVariable = 6
+        xInicial = 0
+    }
+     else if (tela <= 1100) {
          scaleVariable = 6
-         xInicial = 0
+         xInicial = 200
      } else if (tela <= 1366) {
          xInicial = 250
          scaleVariable = 9

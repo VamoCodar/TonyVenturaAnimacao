@@ -31,7 +31,7 @@
 
      } else if (tela <= 1100) {
          scaleVariable = 6
-         xInicial = 200
+         xInicial = 0
      } else if (tela <= 1366) {
          xInicial = 250
          scaleVariable = 9

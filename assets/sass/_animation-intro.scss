@@ -68,7 +68,8 @@ sans-serif;
     will-change: transform;
     -webkit-transition: initial !important;
     transition: initial !important;
-    transform-origin: center;
+    //   transform-origin: center;
+
 }
 
 .secao__texto {
@@ -166,16 +167,17 @@ video::-webkit-media-controls {
     color: $color-text;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 9999;
-    left: 0;
-    right: 0;
+
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    transition: initial;
+    transition: initial !important;
     text-align: center;
     flex-direction: column;
     margin-top: 20px;
     pointer-events: none; //evitar selação do texto fixado
+    left: 0;
+    right: 0;
 
     #menor {
         font-size: 22px;
@@ -205,6 +207,8 @@ video::-webkit-media-controls {
 
     }
 }
+
+
 
 /* .active #text-principal {
     display:none;
@@ -278,6 +282,8 @@ video::-webkit-media-controls {
 @media (max-width: 540px) {
     #text-principal {
         text-align: start;
+        left: initial;
+        right: initial;
 
         h1 {
             font-size: 44px !important;

@@ -114,7 +114,7 @@
      })
      .setPin(".wrapper", {
          pushFollowers: false,
-         spacerClass: "#trigger1",
+        // spacerClass: "#trigger1",
      })
 
  //cena celular

@@ -101,7 +101,6 @@
  //video mobile
 
 
-
  //fixado
  var sceneFix = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
@@ -114,8 +113,12 @@
      })
      .setPin(".wrapper", {
          pushFollowers: false,
-        // spacerClass: "#trigger1",
+         spacerClass: "#trigger1",
      })
+
+ var start = sceneFix.scrollOffset();
+ var end = sceneFix.scrollOffset() + sceneFix.duration();
+ console.log("the scene starts at", start, "and ends at", end);
 
  //cena celular
  var sceneScale = new ScrollMagic.Scene({
@@ -139,7 +142,7 @@
          offset: 20,
          triggerHook: 0,
      })
-     .setClassToggle("#high3", "active") // add class toggle
+     // .setClassToggle("#high3", "active") // add class toggle
      .setTween(resizeText)
      .addIndicators({
          name: "RESIZE text"

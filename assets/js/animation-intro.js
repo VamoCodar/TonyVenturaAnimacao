@@ -26,7 +26,7 @@
         
          
      } else if (tela <= 720) {
-         scaleVariable = 4
+         scaleVariable = 6
          xInicial = -100
 
      } 
@@ -75,6 +75,7 @@
 
      });
 
+
  //estado inicial titulo
  let inicial = TweenMax.set("#text-principal", {
      y: 0,
@@ -95,10 +96,10 @@
 
 
  //text estado final
- const resizeText = TweenMax.to("#text-principal",.3, {
-     y: -300,
+ const resizeText = TweenMax.to("#text-principal",.2, {
+     y: "-100%",
      opacity: 0,
-     scale: 0.7,
+     scale: 0.5,
      ease: "expo.out",
  });
 
@@ -109,7 +110,7 @@
  //fixado
  var sceneFix = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 1400,
+         duration: 800,
          offset: -10,
          triggerHook: 0,
      })
@@ -124,8 +125,8 @@
  //cena celular
  var sceneScale = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 800,
-         offset: 400,
+         duration: 700,
+         offset: 100,
          triggerHook: 0,
 
      })
@@ -153,7 +154,7 @@
  var sceneClass = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
          duration: 0,
-         offset: 1300,
+         offset: 800,
          triggerHook: 0,
 
      })

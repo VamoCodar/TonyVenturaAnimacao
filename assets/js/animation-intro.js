@@ -94,9 +94,8 @@
 
  //text estado final
  const resizeText = TweenMax.to("#text-principal", {
-     y: "-30%",
+     y: "-20%",
      opacity: 0,
-     scale: 0.8,
  });
 
  //video mobile
@@ -106,8 +105,8 @@
  //fixado
  var sceneFix = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 1000,
-         offset: -10,
+         duration: 1200,
+         offset: -100,
          triggerHook: 0,
      })
      .addIndicators({
@@ -121,8 +120,8 @@
  //cena celular
  var sceneScale = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 600,
-         offset: 300,
+         duration: 700,
+         offset: 390,
          triggerHook: 0,
 
      })
@@ -136,8 +135,8 @@
  //CENA texto
  var sceneTitle = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 200,
-         offset: 100,
+         duration: 350,
+         offset: 20,
          triggerHook: 0,
      })
      .setClassToggle("#high3", "active") // add class toggle
@@ -146,11 +145,11 @@
          name: "RESIZE text"
      })
 
- //classe
+ //classe BODY
  var sceneClass = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
          duration: 0,
-         offset: 900,
+         offset: 1090,
          triggerHook: 0,
 
      })

@@ -68,6 +68,7 @@ sans-serif;
     will-change: transform;
     -webkit-transition: initial !important;
     transition: initial !important;
+    transform-origin: center;
 }
 
 .secao__texto {
@@ -93,7 +94,6 @@ sans-serif;
     display: -ms-flexbox;
     display: flex;
     max-width: 100%;
-    padding-top: 80px;
     -webkit-transform-origin: center;
     transform-origin: center;
     -webkit-transition: initial !important;
@@ -161,10 +161,9 @@ video::-webkit-media-controls {
 
 #text-principal {
     position: fixed;
-    width: 100VW;
+    width: 80vw;
     height: 100vh;
-    text-align: center;
-    font-size: 40px;
+    text-align: start;
     color: $color-text;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 9999;
@@ -173,10 +172,10 @@ video::-webkit-media-controls {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-
+    transition: initial;
 
     flex-direction: column;
-    // margin-top: 200px;
+     margin-top: 20px;
     pointer-events: none; //evitar selação do texto fixado
 
     #menor {
@@ -184,12 +183,13 @@ video::-webkit-media-controls {
         max-width: 600px;
         margin: auto;
         color: rgba(255, 255, 255, 0.7);
-        margin: 40px auto;
+        margin: 20px auto;
         display: block;
         padding: 0 15px;
     }
 
     h1 {
+        font-size: 60px;
 
         color: $color-text;
 
@@ -198,6 +198,11 @@ video::-webkit-media-controls {
     .btnPadrao {
         margin: 0 auto;
         pointer-events: all;
+        
+        margin-left:0;
+       a{
+        min-width:160px ;
+       }
     }
 }
 
@@ -273,15 +278,21 @@ video::-webkit-media-controls {
 @media (max-width: 540px) {
     #text-principal {
         h1 {
-            font-size: 32px !important;
+            font-size: 50px !important;
             padding: 0 10px;
         }
 
         #menor {
             font-size: 18px;
-            margin: 30px auto;
+            margin: 20px auto;
+
 
         }
+        .btnPadrao{
+            margin-left:10px;
+        }
+        
+       
     }
 
     .secao__texto {

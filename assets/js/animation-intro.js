@@ -14,7 +14,7 @@
 
  let tela = window.innerWidth;
 
- 
+
  //verificação scale
  function scale() {
      if (tela <= 400) {
@@ -23,19 +23,16 @@
      } else if (tela <= 540) {
          scaleVariable = 3
          xInicial = 0
-        
-         
+
+
      } else if (tela <= 720) {
          scaleVariable = 6
          xInicial = -100
 
-     } 
-   
-     else if (tela <= 992) {
-        scaleVariable = 6
-        xInicial = 0
-    }
-     else if (tela <= 1100) {
+     } else if (tela <= 992) {
+         scaleVariable = 6
+         xInicial = 0
+     } else if (tela <= 1100) {
          scaleVariable = 6
          xInicial = 200
      } else if (tela <= 1366) {
@@ -79,7 +76,7 @@
  //estado inicial titulo
  let inicial = TweenMax.set("#text-principal", {
      y: 0,
-
+     opacity: 1,
  });
 
 
@@ -96,11 +93,10 @@
 
 
  //text estado final
- const resizeText = TweenMax.to("#text-principal",.2, {
-     y: "-100%",
+ const resizeText = TweenMax.to("#text-principal", {
+     y: "-30%",
      opacity: 0,
-     scale: 0.5,
-     ease: "expo.out",
+     scale: 0.8,
  });
 
  //video mobile
@@ -110,7 +106,7 @@
  //fixado
  var sceneFix = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 800,
+         duration: 1000,
          offset: -10,
          triggerHook: 0,
      })
@@ -125,8 +121,8 @@
  //cena celular
  var sceneScale = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 700,
-         offset: 100,
+         duration: 600,
+         offset: 300,
          triggerHook: 0,
 
      })
@@ -137,10 +133,10 @@
      });
 
 
- //CENA titulo
+ //CENA texto
  var sceneTitle = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 0,
+         duration: 200,
          offset: 100,
          triggerHook: 0,
      })
@@ -154,7 +150,7 @@
  var sceneClass = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
          duration: 0,
-         offset: 800,
+         offset: 900,
          triggerHook: 0,
 
      })

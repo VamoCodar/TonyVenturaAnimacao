@@ -8,8 +8,9 @@ body {
     opacity: 0;
 
 }
-body.carregou{
-    opacity:1;
+
+body.carregou {
+    opacity: 1;
 }
 
 
@@ -71,7 +72,7 @@ sans-serif;
     -webkit-transition: initial !important;
     transition: initial !important;
     //   transform-origin: center;
-    overflow:hidden;
+    overflow: hidden;
 
 }
 
@@ -127,6 +128,7 @@ sans-serif;
     object-position: center center;
     visibility: hidden;
     pointer-events: none;
+    background: rgb(5, 5, 5);
 }
 
 video::-webkit-media-controls {
@@ -190,7 +192,7 @@ video::-webkit-media-controls {
         margin: 20px auto;
         display: block;
         padding: 0 15px;
-    transition: initial !important;
+        transition: initial !important;
 
     }
 

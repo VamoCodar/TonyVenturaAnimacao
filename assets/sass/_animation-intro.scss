@@ -31,7 +31,8 @@ sans-serif;
 #trigger1 {
     position: absolute;
     top: 0;
-    min-height:1px;
+    min-height:1200px;
+    
 }
 
 .container {
@@ -41,15 +42,18 @@ sans-serif;
 }
 
 .degrade {
-    background-color: #8BC6EC;
-    background-image: -webkit-linear-gradient(315deg, #8BC6EC 0%, #9599E2 100%);
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+ 
+  
+    background: linear-gradient(180deg, rgb(0, 8, 77) 28%, rgb(60, 78, 211) 100%);
+
+
 
     position: absolute;
-    padding-top: 2800px;
+    padding-top: 3400px;
     top: 0;
     width: 100%;
 }
+
 
 
 .container-celular {
@@ -71,6 +75,9 @@ sans-serif;
     overflow: hidden;
 
 }
+.fixEnd .secao__celular{
+    z-index:1;
+}
 
 .secao__texto {
     -webkit-box-flex: 1;
@@ -82,12 +89,41 @@ sans-serif;
     opacity: 0;
     -webkit-transition-delay: .5s;
     transition-delay: .5s;
+    h2{
+        span{
+            color: white !important;
+        }
+    }
+    p{
+        color:rgb(231, 231, 231);
+    }
+}
+
+#simplesSection p {
+    color:rgb(231, 231, 231);
+
 }
 
 .carregou .secao__texto {
     opacity: 1;
 }
 
+.fixEnd .secao__texto{
+    z-index:1;
+}
+.Typewriter__wrapper {
+    color:white !important  ;
+}
+.videoSection {
+    p{
+        color:rgb(231, 231, 231) !important;
+    }
+
+}
+#simplesSection{
+    color:rgb(231, 231, 231) !important;
+
+}
 
 .wrapper {
     position: relative;
@@ -162,9 +198,9 @@ video::-webkit-media-controls {
 
 
 #text-principal {
-    position: fixed;
+    position: absolute;
     width: 80%;
-    height: 100%;
+    height: 100vh;
     color: $color-text;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 99999;

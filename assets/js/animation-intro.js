@@ -11,7 +11,7 @@
 
  let scaleVariable;
  let xInicial;
-
+ let offsetFix = -230;
  let tela = window.innerWidth;
 
 
@@ -38,9 +38,12 @@
      } else if (tela <= 1366) {
          xInicial = 250
          scaleVariable = 9
+         offsetFix = -130
      } else if (tela <= 1600) {
          scaleVariable = 12
          xInicial = 300
+         offsetFix = -230
+
      } else if (tela <= 2000) {
          scaleVariable = 13
          xInicial = 150
@@ -80,6 +83,8 @@
  });
 
 
+
+
  let menuAnimation =
      new TimelineMax()
      .from(".menu a", .3, {
@@ -104,28 +109,31 @@
  //fixado
  var sceneFix = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
-         duration: 1200,
-         offset: -100,
          triggerHook: 0,
+         duration: 1330,
+         offset: offsetFix,
+
      })
      .addIndicators({
          name: "fixo"
      })
+
      .setPin(".wrapper", {
          pushFollowers: false,
          spacerClass: "#trigger1",
      })
 
  var start = sceneFix.scrollOffset();
- var end = sceneFix.scrollOffset() + sceneFix.duration();
- console.log("the scene starts at", start, "and ends at", end);
+
 
  //cena celular
+
  var sceneScale = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
          duration: 700,
          offset: 390,
          triggerHook: 0,
+
 
      })
 
@@ -162,6 +170,104 @@
      })
      .setTween(menuAnimation)
 
+ var sceneClassFix = new ScrollMagic.Scene({
+         triggerElement: "#trigger1",
+         duration: 0,
+         offset: 1090,
+         triggerHook: 0,
+
+     })
+     .setClassToggle("body", "fixEnd")
+     .addIndicators({
+         name: "add class fix"
+     })
+
+
+
+ const degrade = gsap.to(".degrade", {
+     gradient: "linear-gradient(180deg, rgba(36,110,255,1) 0%, rgba(0,194,255,0.9051995798319328) 100%)",
+     duration: 2,
+     ease: "sine.out",
+     //repeat: 3,
+     // yoyo: true
+ });
+
+ //degrade
+ var sceneDegrade = new ScrollMagic.Scene({
+         triggerElement: "#trigger1",
+         duration: 0,
+         offset: 1650,
+         triggerHook: 0,
+
+     })
+     .addIndicators({
+         name: "degrade"
+     })
+     .setTween(degrade)
+
+
+ gsap.registerPlugin({
+     name: "gradient",
+     init(target, value) {
+         let forceDeg = value => ~value.indexOf("deg") ? value : (value = value.split("(")) && value.shift() + "(180deg, " + value.join("(");
+         this.add(target.style, "backgroundImage", forceDeg(window.getComputedStyle(target).backgroundImage + ""), forceDeg(value));
+     }
+ });
+
+ //letra
+ var texto = document.querySelector('.text__animation');
+ var customNodeCreator = function (character) {
+    return document.createTextNode(character);
+}
+ var typewriter = new Typewriter(texto, {
+    loop: true,
+    delay: 70,
+   // onCreateTextNode: customNodeCreator,
+
+});
+
+typewriter.pause()
+ var sceneLetra = new ScrollMagic.Scene({
+         triggerElement: "#trigger1",
+         duration: 0,
+         offset: 1650,
+         triggerHook: 0,
+
+     })
+     .addIndicators({
+         name: "Letra"
+     })
+     .on("start", function () {
+
+        
+         /*  */
+
+         var typewriter = new Typewriter(texto, {
+             loop: true,
+             delay: 65,
+             onCreateTextNode: customNodeCreator,
+
+         });
+
+         typewriter
+             .start()
+
+             .typeString('Inteligencia Artificial')
+             .pauseFor(1200)
+
+             .deleteAll()
+             .typeString('')
+             //.deleteAll()
+             .typeString('<strong>Transformação</strong> Digital')
+             .pauseFor(2000)
+     })
+     .on("end", function(){
+        typewriter.pause()
+     })
+
+
+
+
 
  //controlador
  controller.addScene([
@@ -169,8 +275,35 @@
      sceneScale,
      sceneTitle,
      sceneClass,
+     sceneClassFix,
+     sceneDegrade,
+     sceneLetra,
 
  ]);
+
+ //text animation 
+
+
+
+ //degrade
+ /*  let gradient = {
+          value: 'linear-gradient(180deg, rgba(254,176,42,1) 0%, rgba(253,150,34,1) 100%)'
+      },
+      target = document.querySelector("div");
+
+  gsap.to(gradient, {
+      value: 'linear-gradient(180deg, rgba(254,210,51,1) 0%, rgba(253,155,36,1) 100%)',
+      duration: 10,
+      repeat: 3,
+      yoyo: true,
+      onUpdate: () => target.style.backgroundImage = gradient.value
+  });
+
+
+  */
+ // assumes you'll always define things with a "deg" value, and it'll get applied to backgroundImage
+
+
 
 
  // window.addEventListener("resize", restart1)

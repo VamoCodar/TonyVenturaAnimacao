@@ -1,3 +1,5 @@
+
+@import "responsivo";
 img {
     display: block;
     max-width: 100%;
@@ -31,8 +33,8 @@ sans-serif;
 #trigger1 {
     position: absolute;
     top: 0;
-    min-height:1200px;
-    
+    min-height: 1200px;
+
 }
 
 .container {
@@ -42,8 +44,8 @@ sans-serif;
 }
 
 .degrade {
- 
-  
+
+
     background: linear-gradient(180deg, rgb(0, 8, 77) 28%, rgb(60, 78, 211) 100%);
 
 
@@ -75,8 +77,9 @@ sans-serif;
     overflow: hidden;
 
 }
-.fixEnd .secao__celular{
-    z-index:1;
+
+.fixEnd .secao__celular {
+    z-index: 1;
 }
 
 .secao__texto {
@@ -89,18 +92,20 @@ sans-serif;
     opacity: 0;
     -webkit-transition-delay: .5s;
     transition-delay: .5s;
-    h2{
-        span{
+
+    h2 {
+        span {
             color: white !important;
         }
     }
-    p{
-        color:rgb(231, 231, 231);
+
+    p {
+        color: rgb(231, 231, 231);
     }
 }
 
 #simplesSection p {
-    color:rgb(231, 231, 231);
+    color: rgb(231, 231, 231);
 
 }
 
@@ -108,20 +113,23 @@ sans-serif;
     opacity: 1;
 }
 
-.fixEnd .secao__texto{
-    z-index:1;
+.fixEnd .secao__texto {
+    z-index: 1;
 }
+
 .Typewriter__wrapper {
-    color:white !important  ;
+    color: white !important;
 }
+
 .videoSection {
-    p{
-        color:rgb(231, 231, 231) !important;
+    p {
+        color: rgb(231, 231, 231) !important;
     }
 
 }
-#simplesSection{
-    color:rgb(231, 231, 231) !important;
+
+#simplesSection {
+    color: rgb(231, 231, 231) !important;
 
 }
 
@@ -302,9 +310,10 @@ video::-webkit-media-controls {
 
 @media (max-width: 993px) {
 
-    .wrapper {       
+    .wrapper {
         flex-direction: column;
         transform-origin: 50% 50%;
+
         .secao__texto {
             margin-left: 0;
             max-width: 550px;
@@ -379,4 +388,40 @@ video::-webkit-media-controls {
 .carregou #videoSection {
     opacity: 1;
 
+}
+
+
+// SEÇÕES INFERIORES ============================
+
+
+#aprendaSection {
+    //  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
+    padding-top: 70px;
+    padding-bottom: 80px;
+}
+
+
+.titulo__presente {
+    text-align: start;
+    //max-width: 600px;
+    margin-left: auto;
+   // font-size: 72px !important;
+    margin-top: 100px;
+    max-width: 900px;
+    height: 218px;
+    margin-bottom: 0 !important;
+
+    h2 {
+        margin-bottom: 0 !important;
+    }
+    @include d(s){
+    font-size: 62px !important;
+
+    }
+}
+
+@media (max-width: 768px){
+    #futuroSection {
+        margin-top: 0px !important;
+    }
 }

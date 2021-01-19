@@ -217,16 +217,17 @@
  //letra
  var texto = document.querySelector('.text__animation');
  var customNodeCreator = function (character) {
-    return document.createTextNode(character);
-}
+     return document.createTextNode(character);
+ }
  var typewriter = new Typewriter(texto, {
-    loop: true,
-    delay: 70,
-   // onCreateTextNode: customNodeCreator,
+     loop: false,
+     //  delay: 70,
+     // onCreateTextNode: customNodeCreator,
+     autoStart: false,
+ })
 
-});
 
-typewriter.pause()
+
  var sceneLetra = new ScrollMagic.Scene({
          triggerElement: "#trigger1",
          duration: 0,
@@ -237,33 +238,72 @@ typewriter.pause()
      .addIndicators({
          name: "Letra"
      })
-     .on("start", function () {
-
-        
+     .on("start", function typing() {
          /*  */
 
          var typewriter = new Typewriter(texto, {
-             loop: true,
+             loop: false,
              delay: 65,
-             onCreateTextNode: customNodeCreator,
+             //onCreateTextNode: customNodeCreator,
 
          });
 
          typewriter
              .start()
-
              .typeString('Inteligencia Artificial')
              .pauseFor(1200)
-
              .deleteAll()
              .typeString('')
              //.deleteAll()
              .typeString('<strong>Transformação</strong> Digital')
              .pauseFor(2000)
      })
-     .on("end", function(){
-        typewriter.pause()
+
+
+
+
+ // gradiente 2 ===========================
+ const degrade2 = gsap.to("#aprendaSection", {
+     gradient: "linear-gradient(180deg, rgba(36,110,255,1) 0%, rgba(0,194,255,0.9051995798319328) 100%)",
+     duration: 2,
+     ease: "sine.out",
+     //repeat: 3,
+     // yoyo: true
+ });
+ //TEXTO 2 =========================
+
+ const texto2 = document.querySelector(".titulo__presente")
+ var sceneLetra2 = new ScrollMagic.Scene({
+         triggerElement: "#trigger1",
+         duration: 0,
+         offset: 4700,
+         triggerHook: 0,
+
      })
+     .addIndicators({
+         name: "Letra"
+     })
+     .setTween(degrade2)
+     .on("start", function typing() {
+
+
+         var typewriter = new Typewriter(texto2, {
+             loop: false,
+             delay: 60,
+             //onCreateTextNode: customNodeCreator,
+         });
+         typewriter
+             .start()
+             .typeString('Se prepare para o futuro')
+             .pauseFor(1400)
+             .deleteChars(6)
+             .typeString('<strong> presente </strong>')
+
+     })
+
+
+
+
 
 
 
@@ -278,29 +318,12 @@ typewriter.pause()
      sceneClassFix,
      sceneDegrade,
      sceneLetra,
+     sceneLetra2,
 
  ]);
 
- //text animation 
 
-
-
- //degrade
- /*  let gradient = {
-          value: 'linear-gradient(180deg, rgba(254,176,42,1) 0%, rgba(253,150,34,1) 100%)'
-      },
-      target = document.querySelector("div");
-
-  gsap.to(gradient, {
-      value: 'linear-gradient(180deg, rgba(254,210,51,1) 0%, rgba(253,155,36,1) 100%)',
-      duration: 10,
-      repeat: 3,
-      yoyo: true,
-      onUpdate: () => target.style.backgroundImage = gradient.value
-  });
-
-
-  */
+  
  // assumes you'll always define things with a "deg" value, and it'll get applied to backgroundImage
 
 
